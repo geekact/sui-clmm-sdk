@@ -32,6 +32,12 @@ All available methods in repo are listed below:
 - [get-liquidity-from-amount-b](src/position/get-liquidity-from-amount-b.ts)
 - [get-liquidity-from-amounts](src/position/get-liquidity-from-amounts.ts)
 
+## swap
+
+- [get-boundary-sqrt-price](src/swap/get-boundary-sqrt-price.ts)
+- [update-amount-out-with-slippage](src/swap/update-amount-out-with-slippage.ts)
+- [update-sqrt-price-with-slippage](src/swap/update-sqrt-price-with-slippage.ts)
+
 ## tick
 
 - [get-boundary-tick-index](src/tick/get-boundary-tick-index.ts)

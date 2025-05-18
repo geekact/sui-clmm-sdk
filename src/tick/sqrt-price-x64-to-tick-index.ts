@@ -15,7 +15,7 @@ import { toBN } from '../math';
 
 export const sqrtPriceX64ToTickIndex = (sqrtPriceX64: Decimal.Value | BN | bigint): number => {
   const sqrtPriceBN = toBN(sqrtPriceX64);
-  if (sqrtPriceBN.gt(new BN(MAX_SQRT_PRICE)) || sqrtPriceBN.lt(new BN(MIN_SQRT_PRICE))) {
+  if (sqrtPriceBN.gt(MAX_SQRT_PRICE) || sqrtPriceBN.lt(MIN_SQRT_PRICE)) {
     throw new Error('Provided sqrtPrice is not within the supported sqrtPrice range.');
   }
 
