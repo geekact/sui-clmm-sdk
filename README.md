@@ -20,6 +20,11 @@ All available methods in repo are listed below:
 - [mnemonic-to-keypair](src/account/mnemonic-to-keypair.ts)
 - [secret-to-keypair](src/account/secret-to-keypair.ts)
 
+## pool
+
+- [calculate-pool-tvl](src/pool/calculate-pool-tvl.ts)
+- [parse-pool-type-arguments](src/pool/parse-pool-type-arguments.ts)
+
 ## position
 
 - [collect-owed-fees](src/position/collect-owed-fees.ts)
