@@ -6,7 +6,8 @@
   "scripts": {
     "test": "vitest",
     "prepare": "npx husky",
-    "build": "tsup"
+    "build": "tsup",
+    "index": "node scripts/export-to-index.mjs"
   },
   "keywords": [],
   "license": "MIT",
