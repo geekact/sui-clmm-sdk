@@ -18,6 +18,7 @@ All available methods in repo are listed below:
 
 - [generate-mnemonic](src/account/generate-mnemonic.ts)
 - [mnemonic-to-keypair](src/account/mnemonic-to-keypair.ts)
+- [secret-to-keypair](src/account/secret-to-keypair.ts)
 
 ## position
 
