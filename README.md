@@ -12,23 +12,6 @@ pnpm add sui-clmm-sdk
 
 <!-- methods start -->
 
-## math
-
-- [amount-from-decimals](src/math/amount-from-decimals.ts)
-- [amount-from-x64](src/math/amount-from-x64.ts)
-- [amount-to-decimals](src/math/amount-to-decimals.ts)
-- [amount-to-x64](src/math/amount-to-x64.ts)
-- [apr2apy](src/math/apr2apy.ts)
-- [as-int-n](src/math/as-int-n.ts)
-- [as-uint-n](src/math/as-uint-n.ts)
-- [bits-to-number](src/math/bits-to-number.ts)
-- [check-overlimit](src/math/check-overlimit.ts)
-- [signed-shift-left](src/math/signed-shift-left.ts)
-- [signed-shift-right](src/math/signed-shift-right.ts)
-- [sub-underflow-u128](src/math/sub-underflow-u128.ts)
-- [to-bn](src/math/to-bn.ts)
-- [to-decimal](src/math/to-decimal.ts)
-
 ## position
 
 - [collect-owed-fees](src/position/collect-owed-fees.ts)
@@ -54,4 +37,21 @@ pnpm add sui-clmm-sdk
 - [sqrt-price-x64-to-tick-index](src/tick/sqrt-price-x64-to-tick-index.ts)
 - [tick-index-to-price](src/tick/tick-index-to-price.ts)
 - [tick-index-to-sqrt-price-x64](src/tick/tick-index-to-sqrt-price-x64.ts)
+
+## math
+
+- [amount-from-decimals](src/math/amount-from-decimals.ts)
+- [amount-from-x64](src/math/amount-from-x64.ts)
+- [amount-to-decimals](src/math/amount-to-decimals.ts)
+- [amount-to-x64](src/math/amount-to-x64.ts)
+- [apr2apy](src/math/apr2apy.ts)
+- [as-int-n](src/math/as-int-n.ts)
+- [as-uint-n](src/math/as-uint-n.ts)
+- [bits-to-number](src/math/bits-to-number.ts)
+- [check-overlimit](src/math/check-overlimit.ts)
+- [signed-shift-left](src/math/signed-shift-left.ts)
+- [signed-shift-right](src/math/signed-shift-right.ts)
+- [sub-underflow-u128](src/math/sub-underflow-u128.ts)
+- [to-bn](src/math/to-bn.ts)
+- [to-decimal](src/math/to-decimal.ts)
 <!-- methods end -->

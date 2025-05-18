@@ -1,7 +1,9 @@
 import { appendFileSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { relative, resolve } from 'node:path';
 
-const dirs = readdirSync('src', { withFileTypes: true });
+const dirs = readdirSync('src', { withFileTypes: true }).sort((a, b) =>
+  a.name === 'math' ? 1 : b.name === 'math' ? -1 : 0,
+);
 const markdown = [];
 
 for (const dir of dirs) {
