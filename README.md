@@ -10,6 +10,8 @@ pnpm add sui-clmm-sdk
 
 # Methods
 
+All available methods in repo are listed below:
+
 <!-- methods start -->
 
 ## position
