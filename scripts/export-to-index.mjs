@@ -17,7 +17,7 @@ for (const dir of dirs) {
     if (file.isFile() && file.name.endsWith('.ts') && file.name !== 'index.ts') {
       const basename = file.name.replace('.ts', '');
       appendFileSync(indexFile, `export * from './${basename}';\n`);
-      markdown.push(`- [${basename}]('./${dir.name}/${file.name})`);
+      markdown.push(`- [${basename}](src/${dir.name}/${file.name})`);
     }
   }
 }
