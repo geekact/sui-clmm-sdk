@@ -14,6 +14,11 @@ All available methods in repo are listed below:
 
 <!-- methods start -->
 
+## account
+
+- [generate-mnemonic](src/account/generate-mnemonic.ts)
+- [mnemonic-to-keypair](src/account/mnemonic-to-keypair.ts)
+
 ## position
 
 - [collect-owed-fees](src/position/collect-owed-fees.ts)
