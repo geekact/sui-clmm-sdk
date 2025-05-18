@@ -35,6 +35,7 @@ All available methods in repo are listed below:
 ## swap
 
 - [get-boundary-sqrt-price](src/swap/get-boundary-sqrt-price.ts)
+- [get-min-amount-with-slippage](src/swap/get-min-amount-with-slippage.ts)
 - [update-amount-out-with-slippage](src/swap/update-amount-out-with-slippage.ts)
 - [update-sqrt-price-with-slippage](src/swap/update-sqrt-price-with-slippage.ts)
 
