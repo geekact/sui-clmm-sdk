@@ -23,6 +23,7 @@ All available methods in repo are listed below:
 ## pool
 
 - [calculate-pool-tvl](src/pool/calculate-pool-tvl.ts)
+- [get-boundary-sqrt-price](src/pool/get-boundary-sqrt-price.ts)
 - [parse-pool-type-arguments](src/pool/parse-pool-type-arguments.ts)
 
 ## position
@@ -43,6 +44,12 @@ All available methods in repo are listed below:
 - [batch-get-objects](src/sui/batch-get-objects.ts)
 - [batch-get-owned-objects](src/sui/batch-get-owned-objects.ts)
 
+## swap
+
+- [get-min-amount-with-slippage](src/swap/get-min-amount-with-slippage.ts)
+- [update-amount-out-with-slippage](src/swap/update-amount-out-with-slippage.ts)
+- [update-sqrt-price-with-slippage](src/swap/update-sqrt-price-with-slippage.ts)
+
 ## tick
 
 - [get-boundary-tick-index](src/tick/get-boundary-tick-index.ts)
@@ -60,10 +67,6 @@ All available methods in repo are listed below:
 ## transaction
 
 - [estimate-transaction-gas](src/transaction/estimate-transaction-gas.ts)
-- [get-boundary-sqrt-price](src/transaction/get-boundary-sqrt-price.ts)
-- [get-min-amount-with-slippage](src/transaction/get-min-amount-with-slippage.ts)
-- [update-amount-out-with-slippage](src/transaction/update-amount-out-with-slippage.ts)
-- [update-sqrt-price-with-slippage](src/transaction/update-sqrt-price-with-slippage.ts)
 
 ## math
 
