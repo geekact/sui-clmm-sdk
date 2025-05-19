@@ -66,6 +66,7 @@ All available methods in repo are listed below:
 - [get-next-tick-index](src/tick/get-next-tick-index.ts)
 - [get-prev-tick-index](src/tick/get-prev-tick-index.ts)
 - [get-tick-score](src/tick/get-tick-score.ts)
+- [is-tick-index-in-range](src/tick/is-tick-index-in-range.ts)
 - [price-to-sqrt-price-x64](src/tick/price-to-sqrt-price-x64.ts)
 - [price-to-tick-index](src/tick/price-to-tick-index.ts)
 - [sqrt-price-x64-to-price](src/tick/sqrt-price-x64-to-price.ts)

@@ -3,6 +3,7 @@ export * from './get-current-tick-index';
 export * from './get-next-tick-index';
 export * from './get-prev-tick-index';
 export * from './get-tick-score';
+export * from './is-tick-index-in-range';
 export * from './price-to-sqrt-price-x64';
 export * from './price-to-tick-index';
 export * from './sqrt-price-x64-to-price';
