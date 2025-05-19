@@ -33,9 +33,11 @@ export const collectOwedRewards = (opts: {
     rewardGrowthsOutside: (Decimal.Value | BN | bigint)[];
     initialized: boolean;
   };
+  currentTime?: Date;
 }): BN[] => {
   const { pool, position, tickLower, tickUpper } = opts;
-  const secondDelta = new BN(Date.now() - pool.rewardUpdatedAt.getTime()).div(THOUSAND);
+  const now = opts.currentTime ? opts.currentTime.getTime() : Date.now();
+  const secondDelta = new BN(now - pool.rewardUpdatedAt.getTime()).div(THOUSAND);
   const poolLiquidity = toBN(pool.liquidity);
   const positionLiquidity = toBN(position.liquidity);
 
