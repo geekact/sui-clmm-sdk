@@ -37,6 +37,12 @@ All available methods in repo are listed below:
 - [get-liquidity-from-amount-b](src/position/get-liquidity-from-amount-b.ts)
 - [get-liquidity-from-amounts](src/position/get-liquidity-from-amounts.ts)
 
+## sui
+
+- [batch-get-dynamic-fields](src/sui/batch-get-dynamic-fields.ts)
+- [batch-get-objects](src/sui/batch-get-objects.ts)
+- [batch-get-woned-objects](src/sui/batch-get-woned-objects.ts)
+
 ## swap
 
 - [get-boundary-sqrt-price](src/swap/get-boundary-sqrt-price.ts)

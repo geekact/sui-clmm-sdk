@@ -2,6 +2,7 @@
 export * from './account';
 export * from './pool';
 export * from './position';
+export * from './sui';
 export * from './swap';
 export * from './tick';
 export * from './math';
