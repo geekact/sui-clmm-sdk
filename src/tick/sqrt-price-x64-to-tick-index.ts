@@ -39,18 +39,10 @@ export const sqrtPriceX64ToTickIndex = (sqrtPriceX64: Decimal.Value | BN | bigin
 
   const log2pFractionX32 = log2pFractionX64.shrn(32);
   const log2pX32 = log2pIntegerX32.add(log2pFractionX32);
-  const logbpX64 = log2pX32.mul(new BN(LOG_B_2_X32));
+  const logbpX64 = log2pX32.mul(LOG_B_2_X32);
 
-  const tickLow = signedShiftRight(
-    logbpX64.sub(new BN(LOG_B_P_ERR_MARGIN_LOWER_X64)),
-    64,
-    128,
-  ).toNumber();
-  const tickHigh = signedShiftRight(
-    logbpX64.add(new BN(LOG_B_P_ERR_MARGIN_UPPER_X64)),
-    64,
-    128,
-  ).toNumber();
+  const tickLow = signedShiftRight(logbpX64.sub(LOG_B_P_ERR_MARGIN_LOWER_X64), 64, 128).toNumber();
+  const tickHigh = signedShiftRight(logbpX64.add(LOG_B_P_ERR_MARGIN_UPPER_X64), 64, 128).toNumber();
 
   if (tickLow == tickHigh) {
     return tickLow;
