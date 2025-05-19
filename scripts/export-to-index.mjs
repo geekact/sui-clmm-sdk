@@ -5,6 +5,7 @@ const dirs = readdirSync('src', { withFileTypes: true }).sort((a, b) =>
   a.name === 'math' ? 1 : b.name === 'math' ? -1 : 0,
 );
 const markdown = [];
+const modules = [];
 
 for (const dir of dirs) {
   if (!dir.isDirectory()) continue;
@@ -14,6 +15,7 @@ for (const dir of dirs) {
   console.log(`Writing to ${relative(process.cwd(), indexFile)}`);
   writeFileSync(indexFile, '');
   markdown.push(`\n## ${dir.name}\n`);
+  modules.push(`export * from './${dir.name}';`);
 
   for (const file of files) {
     if (file.isFile() && file.name.endsWith('.ts') && file.name !== 'index.ts') {
@@ -24,10 +26,23 @@ for (const dir of dirs) {
   }
 }
 
-console.log('Writing to README.md');
-let readme = readFileSync('README.md', 'utf8');
-readme = readme.replace(
-  /(<\!-- methods start -->)([\s\S]+?)(<\!-- methods end -->)/,
-  `$1\n${markdown.join('\n')}\n$3`,
-);
-writeFileSync('README.md', readme);
+{
+  console.log('Writing to src/index.ts');
+  const file = resolve('src', 'index.ts');
+  let content = readFileSync(file, 'utf8');
+  content = content.replace(
+    /(\/\/ modules start)([\s\S]+?)(\/\/ modules end)/,
+    `$1\n${modules.join('\n')}\n$3`,
+  );
+  writeFileSync(file, content);
+}
+
+{
+  console.log('Writing to README.md');
+  let readme = readFileSync('README.md', 'utf8');
+  readme = readme.replace(
+    /(<\!-- methods start -->)([\s\S]+?)(<\!-- methods end -->)/,
+    `$1\n${markdown.join('\n')}\n$3`,
+  );
+  writeFileSync('README.md', readme);
+}
