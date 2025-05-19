@@ -43,6 +43,15 @@ All available methods in repo are listed below:
 - [batch-get-dynamic-fields](src/sui/batch-get-dynamic-fields.ts)
 - [batch-get-objects](src/sui/batch-get-objects.ts)
 - [batch-get-owned-objects](src/sui/batch-get-owned-objects.ts)
+- [pick-move-object](src/sui/pick-move-object.ts)
+- [pick-object-deleted-response](src/sui/pick-object-deleted-response.ts)
+- [pick-object-fields](src/sui/pick-object-fields.ts)
+- [pick-object-id](src/sui/pick-object-id.ts)
+- [pick-object-not-exists-response](src/sui/pick-object-not-exists-response.ts)
+- [pick-object-owner](src/sui/pick-object-owner.ts)
+- [pick-object-reference](src/sui/pick-object-reference.ts)
+- [pick-object-type](src/sui/pick-object-type.ts)
+- [pick-object-version](src/sui/pick-object-version.ts)
 
 ## swap
 
