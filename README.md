@@ -42,14 +42,6 @@ All available methods in repo are listed below:
 - [batch-get-dynamic-fields](src/sui/batch-get-dynamic-fields.ts)
 - [batch-get-objects](src/sui/batch-get-objects.ts)
 - [batch-get-owned-objects](src/sui/batch-get-owned-objects.ts)
-- [estimate-gas](src/sui/estimate-gas.ts)
-
-## swap
-
-- [get-boundary-sqrt-price](src/swap/get-boundary-sqrt-price.ts)
-- [get-min-amount-with-slippage](src/swap/get-min-amount-with-slippage.ts)
-- [update-amount-out-with-slippage](src/swap/update-amount-out-with-slippage.ts)
-- [update-sqrt-price-with-slippage](src/swap/update-sqrt-price-with-slippage.ts)
 
 ## tick
 
@@ -64,6 +56,14 @@ All available methods in repo are listed below:
 - [sqrt-price-x64-to-tick-index](src/tick/sqrt-price-x64-to-tick-index.ts)
 - [tick-index-to-price](src/tick/tick-index-to-price.ts)
 - [tick-index-to-sqrt-price-x64](src/tick/tick-index-to-sqrt-price-x64.ts)
+
+## transaction
+
+- [estimate-gas](src/transaction/estimate-gas.ts)
+- [get-boundary-sqrt-price](src/transaction/get-boundary-sqrt-price.ts)
+- [get-min-amount-with-slippage](src/transaction/get-min-amount-with-slippage.ts)
+- [update-amount-out-with-slippage](src/transaction/update-amount-out-with-slippage.ts)
+- [update-sqrt-price-with-slippage](src/transaction/update-sqrt-price-with-slippage.ts)
 
 ## math
 
