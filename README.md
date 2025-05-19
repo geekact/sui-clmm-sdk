@@ -59,7 +59,7 @@ All available methods in repo are listed below:
 
 ## transaction
 
-- [estimate-gas](src/transaction/estimate-gas.ts)
+- [estimate-transaction-gas](src/transaction/estimate-transaction-gas.ts)
 - [get-boundary-sqrt-price](src/transaction/get-boundary-sqrt-price.ts)
 - [get-min-amount-with-slippage](src/transaction/get-min-amount-with-slippage.ts)
 - [update-amount-out-with-slippage](src/transaction/update-amount-out-with-slippage.ts)

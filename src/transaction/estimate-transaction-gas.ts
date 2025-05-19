@@ -3,7 +3,7 @@ import type { Transaction } from '@mysten/sui/transactions';
 import { toBN } from '../math';
 import type BN from 'bn.js';
 
-export const estimateGas = async (
+export const estimateTransactionGas = async (
   sui: SuiClient,
   tx: Transaction,
   input?: Partial<Omit<DevInspectTransactionBlockParams, 'transactionBlock'>>,
