@@ -41,7 +41,8 @@ All available methods in repo are listed below:
 
 - [batch-get-dynamic-fields](src/sui/batch-get-dynamic-fields.ts)
 - [batch-get-objects](src/sui/batch-get-objects.ts)
-- [batch-get-woned-objects](src/sui/batch-get-woned-objects.ts)
+- [batch-get-owned-objects](src/sui/batch-get-owned-objects.ts)
+- [estimate-gas](src/sui/estimate-gas.ts)
 
 ## swap
 
