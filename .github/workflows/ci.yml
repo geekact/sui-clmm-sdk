@@ -1,0 +1,88 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  git-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version-file: 'package.json'
+      - run: pnpm install
+      - name: Pull Request
+        run: npx --no-install commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+  type-checking:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-dts: [18.x, 20.x, 22.x]
+        ts: [5.5.x, 5.6.x, 5.7.x, 5.8.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version-file: 'package.json'
+      - run: |
+          pnpm install
+          pnpm install @types/node@${{ matrix.node-dts }} typescript@${{ matrix.ts }}
+      - run: pnpm exec tsc
+  code-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version-file: 'package.json'
+      - run: pnpm install
+      - run: npx --no-install prettier --cache --check .
+  bundle:
+    needs: [git-commit, type-checking, code-format]
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version-file: 'package.json'
+      - run: pnpm install
+      - run: pnpm build
+  release:
+    if: github.ref == 'refs/heads/main'
+    needs: [bundle]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
+          node-version-file: 'package.json'
+      - name: git config
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - run: pnpm install
+      - run: pnpm build
+      - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+      - run: npx release-it
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: false
