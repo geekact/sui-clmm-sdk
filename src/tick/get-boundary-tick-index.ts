@@ -1,11 +1,11 @@
 import { MAX_TICK_INDEX, MIN_TICK_INDEX } from '../constant';
-import { getCurrentTickIndex } from './get-current-tick-index';
+import { getTickIndexWithSpacing } from './get-tick-index-with-spacing';
 
 export const getBoundaryTickIndex = (
-  tickSpacing: number = 0,
+  tickSpacing: number,
 ): [minTickIndex: number, maxTickIndex: number] => {
   return <const>[
-    getCurrentTickIndex(MIN_TICK_INDEX, tickSpacing),
-    getCurrentTickIndex(MAX_TICK_INDEX, tickSpacing),
+    getTickIndexWithSpacing(MIN_TICK_INDEX, tickSpacing),
+    getTickIndexWithSpacing(MAX_TICK_INDEX, tickSpacing),
   ];
 };

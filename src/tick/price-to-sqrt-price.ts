@@ -3,7 +3,7 @@ import Decimal from 'decimal.js';
 import { amountToX64 } from '../math/amount-to-x64';
 import { toBN } from '../math/to-bn';
 
-export const priceToSqrtPriceX64 = (
+export const priceToSqrtPrice = (
   price: Decimal.Value,
   decimalsA: number,
   decimalsB: number,

@@ -1,6 +1,6 @@
 import BN from 'bn.js';
 import Decimal from 'decimal.js';
-import { priceToSqrtPriceX64, sqrtPriceX64ToPrice } from '../tick';
+import { priceToSqrtPrice, sqrtPriceToPrice } from '../tick';
 import { MIN_SQRT_PRICE, MAX_SQRT_PRICE } from '../constant';
 
 export const updateSqrtPriceWithSlippage = (opts: {
@@ -12,10 +12,10 @@ export const updateSqrtPriceWithSlippage = (opts: {
 }): BN => {
   const { slippage, decimalsA, decimalsB } = opts;
   const op = opts.a2b ? 'minus' : 'plus';
-  const priceWithSlippage = sqrtPriceX64ToPrice(opts.sqrtPrice, decimalsA, decimalsB).mul(
+  const priceWithSlippage = sqrtPriceToPrice(opts.sqrtPrice, decimalsA, decimalsB).mul(
     new Decimal(1)[op](slippage),
   );
-  const sqrtPrice = priceToSqrtPriceX64(priceWithSlippage, decimalsA, decimalsB);
+  const sqrtPrice = priceToSqrtPrice(priceWithSlippage, decimalsA, decimalsB);
 
   if (sqrtPrice.lt(MIN_SQRT_PRICE)) return MIN_SQRT_PRICE;
   if (sqrtPrice.gt(MAX_SQRT_PRICE)) return MAX_SQRT_PRICE;

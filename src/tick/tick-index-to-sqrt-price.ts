@@ -1,7 +1,7 @@
 import BN from 'bn.js';
 import { signedShiftRight } from '../math/signed-shift-right';
 
-export const tickIndexToSqrtPriceX64 = (tickIndex: number): BN => {
+export const tickIndexToSqrtPrice = (tickIndex: number): BN => {
   if (tickIndex > 0) {
     return new BN(tickIndexToSqrtPricePositive(tickIndex));
   } else {

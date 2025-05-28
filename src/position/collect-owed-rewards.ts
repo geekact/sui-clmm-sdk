@@ -1,6 +1,6 @@
 import BN from 'bn.js';
 import { subUnderflowU128, toBN } from '../math';
-import { checkOverlimit } from '../math/check-overlimit';
+import { assertInLimit } from '../math/assert-in-limit';
 import type Decimal from 'decimal.js';
 
 const ZERO = new BN(0);
@@ -52,7 +52,7 @@ export const collectOwedRewards = (opts: {
     let adjustedRewardGrowthGlobalX64 = growthGlobal;
     if (poolLiquidity.gt(ZERO)) {
       let rewardGrowthDelta = secondDelta.mul(emissionsPerSecond);
-      checkOverlimit(rewardGrowthDelta, 128);
+      assertInLimit(rewardGrowthDelta, 128);
       rewardGrowthDelta = rewardGrowthDelta.div(poolLiquidity);
       adjustedRewardGrowthGlobalX64 = growthGlobal.add(rewardGrowthDelta);
     }

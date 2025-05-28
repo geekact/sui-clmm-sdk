@@ -7,13 +7,13 @@ import {
   MAX_SQRT_PRICE,
   MIN_SQRT_PRICE,
 } from '../constant';
-import { tickIndexToSqrtPriceX64 } from './tick-index-to-sqrt-price-x64';
+import { tickIndexToSqrtPrice } from './tick-index-to-sqrt-price';
 import { signedShiftRight } from '../math/signed-shift-right';
 import { signedShiftLeft } from '../math/signed-shift-left';
 import Decimal from 'decimal.js';
 import { toBN } from '../math';
 
-export const sqrtPriceX64ToTickIndex = (sqrtPriceX64: Decimal.Value | BN | bigint): number => {
+export const sqrtPriceToTickIndex = (sqrtPriceX64: Decimal.Value | BN | bigint): number => {
   const sqrtPriceBN = toBN(sqrtPriceX64);
   if (sqrtPriceBN.gt(MAX_SQRT_PRICE) || sqrtPriceBN.lt(MIN_SQRT_PRICE)) {
     throw new Error('Provided sqrtPrice is not within the supported sqrtPrice range.');
@@ -47,7 +47,7 @@ export const sqrtPriceX64ToTickIndex = (sqrtPriceX64: Decimal.Value | BN | bigin
   if (tickLow == tickHigh) {
     return tickLow;
   } else {
-    const derivedTickHighSqrtPriceX64 = tickIndexToSqrtPriceX64(tickHigh);
+    const derivedTickHighSqrtPriceX64 = tickIndexToSqrtPrice(tickHigh);
     if (derivedTickHighSqrtPriceX64.lte(sqrtPriceBN)) {
       return tickHigh;
     } else {

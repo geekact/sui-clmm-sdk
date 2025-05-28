@@ -62,17 +62,17 @@ All available methods in repo are listed below:
 ## tick
 
 - [get-boundary-tick-index](src/tick/get-boundary-tick-index.ts)
-- [get-current-tick-index](src/tick/get-current-tick-index.ts)
 - [get-next-tick-index](src/tick/get-next-tick-index.ts)
 - [get-prev-tick-index](src/tick/get-prev-tick-index.ts)
+- [get-tick-index-with-spacing](src/tick/get-tick-index-with-spacing.ts)
 - [get-tick-score](src/tick/get-tick-score.ts)
 - [is-tick-index-in-range](src/tick/is-tick-index-in-range.ts)
-- [price-to-sqrt-price-x64](src/tick/price-to-sqrt-price-x64.ts)
+- [price-to-sqrt-price](src/tick/price-to-sqrt-price.ts)
 - [price-to-tick-index](src/tick/price-to-tick-index.ts)
-- [sqrt-price-x64-to-price](src/tick/sqrt-price-x64-to-price.ts)
-- [sqrt-price-x64-to-tick-index](src/tick/sqrt-price-x64-to-tick-index.ts)
+- [sqrt-price-to-price](src/tick/sqrt-price-to-price.ts)
+- [sqrt-price-to-tick-index](src/tick/sqrt-price-to-tick-index.ts)
 - [tick-index-to-price](src/tick/tick-index-to-price.ts)
-- [tick-index-to-sqrt-price-x64](src/tick/tick-index-to-sqrt-price-x64.ts)
+- [tick-index-to-sqrt-price](src/tick/tick-index-to-sqrt-price.ts)
 
 ## transaction
 
@@ -86,9 +86,9 @@ All available methods in repo are listed below:
 - [amount-to-x64](src/math/amount-to-x64.ts)
 - [as-int-n](src/math/as-int-n.ts)
 - [as-uint-n](src/math/as-uint-n.ts)
+- [assert-in-limit](src/math/assert-in-limit.ts)
 - [bits-to-number](src/math/bits-to-number.ts)
 - [calculate-apy](src/math/calculate-apy.ts)
-- [check-overlimit](src/math/check-overlimit.ts)
 - [signed-shift-left](src/math/signed-shift-left.ts)
 - [signed-shift-right](src/math/signed-shift-right.ts)
 - [sub-underflow-u128](src/math/sub-underflow-u128.ts)
