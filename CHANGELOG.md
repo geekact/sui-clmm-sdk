@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/geekact/sui-clmm-sdk/compare/0.2.0...0.2.1) (2025-07-14)
+
+
+### Bug Fixes
+
+* enhance pickObjectOwner function to handle different response structures ([71ac11b](https://github.com/geekact/sui-clmm-sdk/commit/71ac11b542075fa350fecd0b0d2b70c36b93c789))
+
 # 0.2.0 (2025-05-28)
 
 
