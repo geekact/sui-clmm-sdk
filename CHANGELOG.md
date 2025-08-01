@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.3.0](https://github.com/geekact/sui-clmm-sdk/compare/0.2.1...0.3.0) (2025-08-01)
+
+
+### Features
+
+* support batchGetTransactionBlocks function ([fcadae9](https://github.com/geekact/sui-clmm-sdk/commit/fcadae9e873f75947ad4ad2257b4aa7112db121c))
+
 ## [0.2.1](https://github.com/geekact/sui-clmm-sdk/compare/0.2.0...0.2.1) (2025-07-14)
 
 
