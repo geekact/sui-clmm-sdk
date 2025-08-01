@@ -43,6 +43,7 @@ All available methods in repo are listed below:
 - [batch-get-dynamic-fields](src/sui/batch-get-dynamic-fields.ts)
 - [batch-get-objects](src/sui/batch-get-objects.ts)
 - [batch-get-owned-objects](src/sui/batch-get-owned-objects.ts)
+- [batch-get-transaction-blocks](src/sui/batch-get-transaction-blocks.ts)
 - [pick-move-object](src/sui/pick-move-object.ts)
 - [pick-object-deleted-response](src/sui/pick-object-deleted-response.ts)
 - [pick-object-fields](src/sui/pick-object-fields.ts)
