@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.4.0](https://github.com/geekact/sui-clmm-sdk/compare/0.3.0...0.4.0) (2026-04-21)
+
+
+### Features
+
+* add support for parsing generic type parameters in pool type arguments ([09ad25a](https://github.com/geekact/sui-clmm-sdk/commit/09ad25adefc218051590351632a63c7817caa431))
+
 # [0.3.0](https://github.com/geekact/sui-clmm-sdk/compare/0.2.1...0.3.0) (2025-08-01)
 
 

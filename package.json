@@ -1,6 +1,6 @@
 {
   "name": "sui-clmm-sdk",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Sui clmm common sdk",
   "main": "index.js",
   "scripts": {
