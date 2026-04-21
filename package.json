@@ -43,6 +43,7 @@
     "@mysten/sui": "^1.0.0"
   },
   "dependencies": {
+    "@mysten/bcs": "^2.0.3",
     "@scure/bip39": "^1.6.0",
     "@types/bn.js": "^5.1.6",
     "bn.js": "^5.2.2",

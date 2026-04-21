@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@mysten/bcs':
+        specifier: ^2.0.3
+        version: 2.0.3
       '@scure/bip39':
         specifier: ^1.6.0
         version: 1.6.0
@@ -23,7 +26,7 @@ importers:
     devDependencies:
       '@cetusprotocol/cetus-sui-clmm-sdk':
         specifier: ^5.3.4
-        version: 5.3.4(@mysten/bcs@1.6.1)(@mysten/sui@1.29.1(typescript@5.8.3))
+        version: 5.3.4(@mysten/bcs@2.0.3)(@mysten/sui@1.29.1(typescript@5.8.3))
       '@commitlint/cli':
         specifier: ^19.8.1
         version: 19.8.1(@types/node@22.15.18)(typescript@5.8.3)
@@ -525,12 +528,18 @@ packages:
   '@mysten/bcs@1.6.1':
     resolution: {integrity: sha512-pywsl2+jxbib5CbteAjMpmJpnj1pcUco2ff+lXCK3hfppPbkyWEMbZDQn1jNngV6ADQ3IFIvPs0FaS7fKWPOLA==}
 
+  '@mysten/bcs@2.0.3':
+    resolution: {integrity: sha512-dwcaL4HNAsEGpU3hKUAsXgCZp9l6++e2A3THpzoYZ8e7bsy4XH1V0dXD5dIzgNcVZiZfb6ZnDMG+gdF6+1WOQA==}
+
   '@mysten/sui@1.29.1':
     resolution: {integrity: sha512-VkmaLIgXpuRMBFe47SC0swHemDx9qfhGQyxybFr2r3dTnh42gTFi0BlyW3aLr0Y2GxWbNlLphB5C3ELR7aqacw==}
     engines: {node: '>=18'}
 
   '@mysten/utils@0.0.0':
     resolution: {integrity: sha512-KRI57Qow3E7TGqczimazwGf7+fwukdOi+6a31igSCzz0kPjAXbyK1a1gXaxeLMF8xEZ07ouW3RnsWt+EaUuHUw==}
+
+  '@mysten/utils@0.3.1':
+    resolution: {integrity: sha512-36KhxG284uhDdSnlkyNaS6fzKTX9FpP2WQWOwUKIRsqQFFIm2ooCf2TP1IuqrtMpkairwpiWkAS0eg7cpemVzg==}
 
   '@noble/curves@1.9.1':
     resolution: {integrity: sha512-k11yZxZg+t+gWvBbIswW0yoJlu8cHOC7dhunwOzoWH/mXGBiYyR4YY6hAEK/3EUs4UpB8la1RfdRpeGsFHkWsA==}
@@ -717,6 +726,9 @@ packages:
 
   '@scure/base@1.2.5':
     resolution: {integrity: sha512-9rE6EOVeIQzt5TSu4v+K523F8u6DhBsoZWPGKlnCshhlDhy0kJzUX4V+tr2dWmzF1GdekvThABoEQBGBQI7xZw==}
+
+  '@scure/base@2.0.0':
+    resolution: {integrity: sha512-3E1kpuZginKkek01ovG8krQ0Z44E3DHPjc5S2rjJw9lZn3KSQOs8S7wqikF/AH7iRanHypj85uGyxk0XAyC37w==}
 
   '@scure/bip32@1.7.0':
     resolution: {integrity: sha512-E4FFX/N3f4B80AKWp5dP6ow+flD1LQZo/w8UnLGYZO674jS6YnYeepycOOksv+vLPSpgN35wgKgy+ybfTb2SMw==}
@@ -2444,9 +2456,9 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
-  '@cetusprotocol/cetus-sui-clmm-sdk@5.3.4(@mysten/bcs@1.6.1)(@mysten/sui@1.29.1(typescript@5.8.3))':
+  '@cetusprotocol/cetus-sui-clmm-sdk@5.3.4(@mysten/bcs@2.0.3)(@mysten/sui@1.29.1(typescript@5.8.3))':
     dependencies:
-      '@mysten/bcs': 1.6.1
+      '@mysten/bcs': 2.0.3
       '@mysten/sui': 1.29.1(typescript@5.8.3)
       '@suchipi/femver': 1.0.0
       '@syntsugar/cc-graph': 0.1.1
@@ -2828,6 +2840,11 @@ snapshots:
       '@mysten/utils': 0.0.0
       '@scure/base': 1.2.5
 
+  '@mysten/bcs@2.0.3':
+    dependencies:
+      '@mysten/utils': 0.3.1
+      '@scure/base': 2.0.0
+
   '@mysten/sui@1.29.1(typescript@5.8.3)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.11.0)
@@ -2850,6 +2867,10 @@ snapshots:
   '@mysten/utils@0.0.0':
     dependencies:
       '@scure/base': 1.2.5
+
+  '@mysten/utils@0.3.1':
+    dependencies:
+      '@scure/base': 2.0.0
 
   '@noble/curves@1.9.1':
     dependencies:
@@ -3007,6 +3028,8 @@ snapshots:
     optional: true
 
   '@scure/base@1.2.5': {}
+
+  '@scure/base@2.0.0': {}
 
   '@scure/bip32@1.7.0':
     dependencies:
