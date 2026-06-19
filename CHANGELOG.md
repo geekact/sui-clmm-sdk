@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.4.1](https://github.com/geekact/sui-clmm-sdk/compare/0.4.0...0.4.1) (2026-06-19)
+
 # [0.4.0](https://github.com/geekact/sui-clmm-sdk/compare/0.3.0...0.4.0) (2026-04-21)
 
 
