@@ -1,19 +1,29 @@
-import type { SuiObjectResponse, SuiObjectData, SuiMoveObject } from '@mysten/sui/client';
+import type { SuiClientTypes } from '@mysten/sui/client';
 
-export function pickMoveObject(response: SuiObjectResponse | SuiObjectData): SuiMoveObject {
-  if ('error' in response && response.error) {
-    throw new Error(`Object with error: ${response.error?.code}`);
+export function pickMoveObject(object: SuiClientTypes.Object<{ json: true }>): {
+  type: string;
+  fields: Record<string, unknown>;
+} {
+  if (!object.json) {
+    throw new Error(`Object missing content, forget to set include: { json: true }?`);
   }
 
-  const suiObject = 'data' in response ? response.data! : (response as SuiObjectData);
-
-  if (!suiObject.content) {
-    throw new Error(`Object missing content, forget to explicit 'showContent: true'?`);
+  const json = object.json;
+  if (
+    typeof json === 'object' &&
+    json !== null &&
+    'fields' in json &&
+    typeof json['fields'] === 'object' &&
+    json['fields'] !== null
+  ) {
+    return {
+      type: typeof json['type'] === 'string' ? json['type'] : object.type,
+      fields: json['fields'] as Record<string, unknown>,
+    };
   }
 
-  if (suiObject.content.dataType !== 'moveObject') {
-    throw new Error(`Object is not move object, actual type is '${suiObject.content.dataType}'`);
-  }
-
-  return suiObject.content;
+  return {
+    type: object.type,
+    fields: json as Record<string, unknown>,
+  };
 }

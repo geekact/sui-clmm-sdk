@@ -25,7 +25,6 @@
     "rootDir": "./",
     "noEmit": true,
     "importHelpers": false,
-    "downlevelIteration": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "allowSyntheticDefaultImports": true,

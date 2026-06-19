@@ -1,4 +1,4 @@
-import type { MultiGetTransactionBlocksParams, SuiClient } from '@mysten/sui/client';
+import type { ClientWithCoreApi, SuiClientTypes } from '@mysten/sui/client';
 
 /**
  * ```
@@ -12,20 +12,26 @@ import type { MultiGetTransactionBlocksParams, SuiClient } from '@mysten/sui/cli
  * }
  * ```
  */
-export async function* batchGetTransactionBlocks(
-  sui: SuiClient,
+export async function* batchGetTransactionBlocks<
+  Include extends SuiClientTypes.TransactionInclude = {},
+>(
+  sui: ClientWithCoreApi,
   digests: string[],
-  params: Omit<MultiGetTransactionBlocksParams, 'digests'> = {},
+  params: Omit<SuiClientTypes.GetTransactionOptions<Include>, 'digest'> = {},
 ) {
-  digests = [...new Set(digests)];
+  const uniqueDigests = [...new Set(digests)];
+  const step = 50;
 
-  do {
-    const blocks = await sui.multiGetTransactionBlocks({
-      digests: digests.splice(0, 50),
-      ...params,
-    });
-    for (const block of blocks) {
-      yield block;
+  for (let i = 0; i < uniqueDigests.length; i += step) {
+    const batch = uniqueDigests.slice(i, i + step);
+    const results = await Promise.all(
+      batch.map((digest) => sui.core.getTransaction({ ...params, digest })),
+    );
+    for (const result of results) {
+      const tx = result.Transaction ?? result.FailedTransaction;
+      if (tx) {
+        yield tx;
+      }
     }
-  } while (digests.length > 0);
+  }
 }

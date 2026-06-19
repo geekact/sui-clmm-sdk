@@ -1,4 +1,4 @@
-import type { GetDynamicFieldsParams, SuiClient } from '@mysten/sui/client';
+import type { ClientWithCoreApi, SuiClientTypes } from '@mysten/sui/client';
 
 /**
  * ```
@@ -12,16 +12,19 @@ import type { GetDynamicFieldsParams, SuiClient } from '@mysten/sui/client';
  * }
  * ```
  */
-export async function* batchGetDynamicFields(sui: SuiClient, input: GetDynamicFieldsParams) {
+export async function* batchGetDynamicFields(
+  sui: ClientWithCoreApi,
+  input: SuiClientTypes.ListDynamicFieldsOptions,
+) {
   let hasNextPage = true;
   let cursor = input.cursor;
 
   do {
-    const result = await sui.getDynamicFields({ ...input, cursor });
-    for (const field of result.data) {
+    const result = await sui.core.listDynamicFields({ ...input, cursor });
+    for (const field of result.dynamicFields) {
       yield field;
     }
     hasNextPage = result.hasNextPage;
-    cursor = result.nextCursor;
+    cursor = result.cursor;
   } while (hasNextPage);
 }

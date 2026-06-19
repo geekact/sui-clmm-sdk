@@ -1,4 +1,4 @@
-import type { GetOwnedObjectsParams, SuiClient } from '@mysten/sui/client';
+import type { ClientWithCoreApi, SuiClientTypes } from '@mysten/sui/client';
 
 /**
  * ```
@@ -12,16 +12,19 @@ import type { GetOwnedObjectsParams, SuiClient } from '@mysten/sui/client';
  * }
  * ```
  */
-export async function* batchGetOwnedObjects(sui: SuiClient, input: GetOwnedObjectsParams) {
+export async function* batchGetOwnedObjects(
+  sui: ClientWithCoreApi,
+  input: SuiClientTypes.ListOwnedObjectsOptions,
+) {
   let hasNextPage = true;
   let cursor = input.cursor;
 
   do {
-    const result = await sui.getOwnedObjects({ ...input, cursor });
-    for (const obj of result.data) {
-      yield obj;
+    const result = await sui.core.listOwnedObjects({ ...input, cursor });
+    for (const object of result.objects) {
+      yield object;
     }
-    cursor = result.nextCursor;
+    cursor = result.cursor;
     hasNextPage = result.hasNextPage;
   } while (hasNextPage);
 }

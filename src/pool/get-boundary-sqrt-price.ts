@@ -1,7 +1,6 @@
 import type BN from 'bn.js';
-import { MAX_TICK_INDEX } from '../constant';
+import { MAX_TICK_INDEX, MIN_TICK_INDEX } from '../constant';
 import { getTickIndexWithSpacing, tickIndexToSqrtPrice } from '../tick';
-import { MIN_TICK_INDEX } from 'turbos-clmm-sdk';
 
 export const getBoundarySqrtPrice = (a2b: boolean, tickSpacing: number): BN => {
   return a2b
